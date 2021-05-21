@@ -2,7 +2,7 @@
 @extends('dashboard.master')
 @section('content')
 @include('dashboard.partials.validation-error')
-<form action="{{ route('category.store')}}" method="category">
+<form action="{{ route('category.store')}}" method="post">
     @csrf
     {{-- fila 1 --}}
     <div class="row">
