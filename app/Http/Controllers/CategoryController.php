@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategory;
-use App\Http\Requests\StrorePost;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -38,7 +37,7 @@ class CategoryController extends Controller
      */
     public function store(StoreCategory $request)
     {
-        Category::create($request->validate());
+        Category::create($request->validated());
         return back()->with('status','Publicacion creada con exito');
     }
 

@@ -14,7 +14,7 @@
     @include('dashboard.partials.nav-header-main')
     <div class="container">
         @include('dashboard.partials.session-status')
-        @yield('contenido')
+        @yield('content')
     </div>
     <script src="{{ asset('js/app.js')}}"></script>
 </body>

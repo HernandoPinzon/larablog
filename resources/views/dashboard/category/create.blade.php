@@ -1,29 +1,27 @@
+{{-- Llamamos la vista de la cual herdaremos la estructura --}}
 @extends('dashboard.master')
 @section('content')
 @include('dashboard.partials.validation-error')
-
-<form action="{{ route('category.store') }}" method="post">
+<form action="{{ route('category.store')}}" method="category">
     @csrf
-
-    {{--form:post--}}
+    {{-- fila 1 --}}
     <div class="row">
         <div class="form-group">
-            <label for="name">Categoria</label>
-            <input type="text" class="form-control" name="name" id="name">
+            <label for="name">
+                <input class="form-control" type="text" name="name" id="name">
+            </label>
         </div>
     </div>
-
+    {{-- fila 2 --}}
     <div class="row">
-        <div class="row form-group">
-            <label for="description">Descripcion</label>
-            <textarea rows="10" class="form-control" name="description" id="description">
-        </div>
+        <label for="description">Contenido</label>
+        <textarea class="form-control" name="description" id="description" rows="10"></textarea>
     </div>
-
+    {{-- fila 3 --}}
     <div class="row center">
         <div class="col s6">
             <button class="btn btn-success btn-sm" type="submit">Publicar</button>
-            <button class="btn btn-danger brn-sm">Cancelar</button>
+            <button class="btn btn-danger btn-sm">cancelar</button>
         </div>
     </div>
 </form>

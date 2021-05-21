@@ -36,3 +36,4 @@
 </a> --}}
 
 {{$categories->links()}}
+@endsection

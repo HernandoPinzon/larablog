@@ -10,8 +10,7 @@
         <tr>
             <td>Id</td>
             <td>Nombre</td>
-            <td>Categoria</td>
-            <td>Estado ublicacion</td>
+            <td>Descripcion</td>
             <td>Creacion</td>
             <td>Actualizacion</td>
             <td>Acciones</td>
@@ -22,9 +21,8 @@
         @foreach ($posts as $post)
             <tr>
                 <td>{{ $post->id }}</td>
-                <td>{{ $post->title }}</td>
-                <td>{{ $post->categoty_id }}</td>
-                <td>{{ $post->posted }}</td>
+                <td>{{ $post->name }}</td>
+                <td>{{ $post->description }}</td>
                 <td>{{ $post->created_at->format('d-m-Y') }}</td>
                 <td>{{ $post->created_at->format('d-m-Y') }}</td>
                 <td>
@@ -44,3 +42,4 @@
 </table>
 
 {{ $posts->links() }}
+@endsection
