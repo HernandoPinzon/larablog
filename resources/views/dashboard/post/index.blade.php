@@ -1,5 +1,6 @@
 @extends('dashboard.master')
 @section('content')
+
 <a href="{{ route('post.create') }}" class="btn btn-succes mt-3 mb-3">
     Crear
 </a>
@@ -29,8 +30,13 @@
                 <td>
                     <a href="{{ route('post.show',$post->id) }}" class="btn btn-primary">Ver</a>
                     <a href="{{ route('post.edit',$post->id) }}" class="btn btn-primary">Actualizar</a>
-                    <button data-toggle="modal" data-target="#deleteModal" data-id="{{ $post->id }}"
-                        class="btn btn-danger">Eliminar</button>
+                    <button 
+                        data-toggle="modal" 
+                        data-target="#deleteModal" 
+                        data-id="{{ $post->id }}"
+                        class="btn btn-danger">
+                        Eliminar
+                    </button>
                 </td>
             </tr>
         @endforeach
@@ -38,5 +44,3 @@
 </table>
 
 {{ $posts->links() }}
-
-@endsection

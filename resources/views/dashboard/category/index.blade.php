@@ -1,8 +1,9 @@
 @extends('dashboard.master')
 @section('content')
 
-
-
+<a class="btn btn-success mt-3 mb-3" href="{{ route('category.create')}}">
+    Crear
+</a>
 
 <table class="table">
     <thead>
@@ -30,10 +31,8 @@
     </tbody>
 </table>
 
-<a href="{{ route(category.create)}}" class="btn btn-succes mt-3 mb-3">
+{{-- <a href="{{ route(category.create)}}" class="btn btn-succes mt-3 mb-3">
     crear
-</a>
+</a> --}}
 
 {{$categories->links()}}
-
-@endsection
