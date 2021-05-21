@@ -14,11 +14,6 @@
     @include('dashboard.partials.nav-header-main')
     <div class="container">
         @include('dashboard.partials.session-status')
-        @if(session('status'))
-        <div class="alert alert-primary">
-            {{session('status')}}
-        </div>
-        @endif
         @yield('contenido')
     </div>
     <script src="{{ asset('js/app.js')}}"></script>
