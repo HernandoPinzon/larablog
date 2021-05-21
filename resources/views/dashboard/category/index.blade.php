@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 @section('content')
 
-<a class="btn btn-success mt-3 mb-3" href="{{ route('category.create')}}">
+<a class="btn btn-success mt-3 mb-3" href="{{ route('category.create') }}">
     Crear
 </a>
 
@@ -10,8 +10,8 @@
         <tr>
             <td>Id</td>
             <td>Nombre</td>
-            <td>Categoria</td>
-            
+            <td>Descripcion</td>
+            <td>Acciones</td>
         </tr>
     </thead>
 
@@ -21,9 +21,9 @@
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->description }}</td>
-                
                 <td>
                     <a href="{{ route('category.show',$category->id) }}" class="btn btn-primary">Ver</a>
+                    <a href="{{ route('category.edit',$category->id) }}" class="btn btn-primary">Actualizar</a>
                     
                 </td>
             </tr>
@@ -31,9 +31,5 @@
     </tbody>
 </table>
 
-{{-- <a href="{{ route(category.create)}}" class="btn btn-succes mt-3 mb-3">
-    crear
-</a> --}}
-
-{{$categories->links()}}
+{{ $categories->links() }}
 @endsection

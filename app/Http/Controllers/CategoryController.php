@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCategory;
+
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCategory;
 
 class CategoryController extends Controller
 {
@@ -15,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('create_at','desc')->paginate(5);
+        $categories = Category::orderBy('created_at','desc')->paginate(5);
         return view('dashboard.category.index',['categories'=>$categories]);
     }
 

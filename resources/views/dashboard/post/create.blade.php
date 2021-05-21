@@ -15,7 +15,7 @@
     {{-- fila 2 --}}
     <div class="row">
         <label for="description">Contenido</label>
-        <textarea class="form-control" name="description" id="descrition" rows="10"></textarea>
+        <textarea class="form-control" name="description" id="description" rows="10"></textarea>
     </div>
     {{-- fila 3 --}}
     <div class="row center">
