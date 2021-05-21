@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Request\StoreCategory;
+use App\Http\Request\StrorePost;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('create_at','desc')->paginate(5);
-        retrun view('dashboard.category.index',['categories'=>$categories]);
+        return view('dashboard.category.index',['categories'=>$categories]);
     }
 
     /**
@@ -25,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        retrun view('dashboard.category.create');
+        return view('dashboard.category.create');
     }
 
     /**
@@ -37,7 +39,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Category::create($request->validate());
-        retrun back()->with('status','Publicacion creada con exito');
+        return back()->with('status','Publicacion creada con exito');
     }
 
     /**

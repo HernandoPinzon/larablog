@@ -2,6 +2,8 @@
 @section('content')
 
 
+
+
 <table class="table">
     <thead>
         <tr>
@@ -13,11 +15,11 @@
     </thead>
 
     <tbody>
-        @foreach ($posts as $post)
+        @foreach ($categories as $category)
             <tr>
-                <td>{{ $post->id }}</td>
-                <td>{{ $post->title }}</td>
-                <td>{{ $post->categoty_id }}</td>
+                <td>{{ $category->id }}</td>
+                <td>{{ $category->name }}</td>
+                <td>{{ $category->description }}</td>
                 
                 <td>
                     <a href="{{ route('category.show',$category->id) }}" class="btn btn-primary">Ver</a>
@@ -28,7 +30,7 @@
     </tbody>
 </table>
 
-<a href="{{ raute(category.create)}}" class="btn btn-succes mt-3 mb-3">
+<a href="{{ route(category.create)}}" class="btn btn-succes mt-3 mb-3">
     crear
 </a>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePost;
+use App\Http\Request\StoreCategory;
 
 class PostController extends Controller
 {
@@ -15,8 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at','desc')->paginate(5)
-        return view('dashboard.post.index', ['post'=>$posts]);
+        $posts = Post::orderBy('created_at','desc')->paginate(5);
+        return view('dashboard.post.index', ['posts'=>$posts]);
     }
 
     /**

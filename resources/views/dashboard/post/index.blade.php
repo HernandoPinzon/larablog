@@ -29,8 +29,14 @@
                 <td>
                     <a href="{{ route('post.show',$post->id) }}" class="btn btn-primary">Ver</a>
                     <a href="{{ route('post.edit',$post->id) }}" class="btn btn-primary">Actualizar</a>
+                    <button data-toggle="modal" data-target="#deleteModal" data-id="{{ $post->id }}"
+                        class="btn btn-danger">Eliminar</button>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+
+{{ $posts->links() }}
+
+@endsection
