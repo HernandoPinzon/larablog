@@ -39,5 +39,5 @@ Route::resource('/dashboard/post',
     PostController::class
 );
 Route::resource('/dashboard/category',
-    CategorytController::class
+    CategoryController::class
 );

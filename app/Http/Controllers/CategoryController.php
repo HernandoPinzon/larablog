@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class CategorytController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class CategorytController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('create_at','desc')->paginate(5);
+        retrun view('dashboard.category.index',['categories'=>$categories]);
     }
 
     /**
@@ -24,7 +25,7 @@ class CategorytController extends Controller
      */
     public function create()
     {
-        //
+        retrun view('dashboard.category.create');
     }
 
     /**
@@ -35,7 +36,8 @@ class CategorytController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create($request->validate());
+        retrun back()->with('status','Publicacion creada con exito');
     }
 
     /**
