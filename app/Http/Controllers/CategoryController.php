@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request\StoreCategory;
-use App\Http\Request\StrorePost;
+use App\Http\Requests\StoreCategory;
+use App\Http\Requests\StrorePost;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -36,7 +36,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategory $request)
     {
         Category::create($request->validate());
         return back()->with('status','Publicacion creada con exito');

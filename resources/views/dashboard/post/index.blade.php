@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 @section('content')
 
-<a href="{{ route('post.create') }}" class="btn btn-succes mt-3 mb-3">
+<a class="btn btn-success mt-3 mb-3" href="{{ route('post.create') }}">
     Crear
 </a>
 
